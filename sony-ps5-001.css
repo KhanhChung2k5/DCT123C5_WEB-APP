@@ -1,0 +1,154 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+body header {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(63, 63, 63);
+}
+body header a svg {
+  width: 60px;
+  height: 60px;
+}
+body header nav {
+  width: 70%;
+}
+body header nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+body header nav ul li a {
+  color: white;
+}
+body main #product-details {
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+body main #product-details .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  width: 70%;
+}
+body main #product-details .container .product-image {
+  width: 45%;
+  height: 500px;
+}
+body main #product-details .container .product-image #box-img {
+  width: 100%;
+  height: 600px;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #product-details .container .product-image #box-img #img {
+  width: 95%;
+  height: 95%;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://shopdunk.com/images/thumbs/0028431_sony-ps5-slim-may-choi-game-sony-playstation-5-slim-chinh-hang-sony-viet-nam_550.jpeg");
+}
+body main #product-details .container .product-image #image-carousel {
+  margin-top: 10px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+body main #product-details .container .product-image #image-carousel .listImg {
+  width: 20%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-left: 5px;
+}
+body main #product-details .container .product-info {
+  width: 45%;
+}
+body main #product-details .container .product-info h1 {
+  font-size: xx-large;
+}
+body main #product-details .container .product-info del {
+  font-size: large;
+  color: rgb(87, 87, 87);
+}
+body main #product-details .container .product-info #price {
+  color: rgb(0, 42, 255);
+  font-size: xx-large;
+  font-weight: 600;
+}
+body main #product-details .container .product-info .description {
+  font-size: small;
+  color: rgb(112, 112, 112);
+}
+body main #product-details .container .product-info #box-promotion {
+  margin-top: 10px;
+  max-width: 100%;
+  height: 300px;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 5px;
+  padding: 10px;
+}
+body main #product-details .container .product-info #box-promotion #icon-promotion {
+  display: flex;
+  align-items: center;
+}
+body main #product-details .container .product-info #box-promotion #icon-promotion svg {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+}
+body main #product-details .container .product-info #box-promotion #gift-code {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+body main #product-details .container .product-info #box-promotion #gift-code #input-giftCode {
+  width: 65%;
+  height: auto;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 1px 1px 10px 1px rgb(154, 154, 154);
+}
+body main #product-details .container .product-info #box-promotion #gift-code #submit-giftCode {
+  width: 25%;
+  color: white;
+  height: auto;
+  background-color: rgb(73, 146, 73);
+  border-radius: 7px;
+}
+body main #product-details .container .product-info #buy {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(0, 102, 204);
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  font-size: large;
+}
+body main #product-details .container .product-info #product-inclusions {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 7px;
+}
+body main #product-details .container .product-info #product-inclusions h3 {
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}/*# sourceMappingURL=sony-ps5-001.css.map */
