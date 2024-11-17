@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Bán Hàng</title>
+    <link rel="stylesheet" href="Shop.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap');
+        </style>
+        
+
+</head>
+
+<body>
+    <div id="main-shop">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="" alt="Logo Công Ty">
+
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Trang Chủ</a></li>
+                        <li><a href="#products">Sản Phẩm</a></li>
+                        <li><a href="#about">Giới Thiệu</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+                <div class="search-bar">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                        <path
+                            d="M18.125,15.804l-4.038-4.037c0.675-1.079,1.012-2.308,1.01-3.534C15.089,4.62,12.199,1.75,8.584,1.75C4.815,1.75,1.982,4.726,2,8.286c0.021,3.577,2.908,6.549,6.578,6.549c1.241,0,2.417-0.347,3.44-0.985l4.032,4.026c0.167,0.166,0.43,0.166,0.596,0l1.479-1.478C18.292,16.234,18.292,15.968,18.125,15.804 M8.578,13.99c-3.198,0-5.716-2.593-5.733-5.71c-0.017-3.084,2.438-5.686,5.74-5.686c3.197,0,5.625,2.493,5.64,5.624C14.242,11.548,11.621,13.99,8.578,13.99 M16.349,16.981l-3.637-3.635c0.131-0.11,0.721-0.695,0.876-0.884l3.642,3.639L16.349,16.981z">
+                        </path>
+                    </svg>
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                </div>
+                <div>
+                    <!-- <a id="account" href="#account">Tài khoản</a>
+                    <a id="shop-bag" href="#cart">Giỏ hàng</a> -->
+                    <div id="account">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 16 16"
+                            fill="none">
+                            <path
+                                d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
+                                fill="#000000" />
+                            <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z"
+                                fill="#000000" />
+                        </svg>
+                    </div>
+                    <div id="shop-bag">
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path fill="#ffffff"
+                                d="M17.671,13.945l0.003,0.002l1.708-7.687l-0.008-0.002c0.008-0.033,0.021-0.065,0.021-0.102c0-0.236-0.191-0.428-0.427-0.428H5.276L4.67,3.472L4.665,3.473c-0.053-0.175-0.21-0.306-0.403-0.306H1.032c-0.236,0-0.427,0.191-0.427,0.427c0,0.236,0.191,0.428,0.427,0.428h2.902l2.667,9.945l0,0c0.037,0.119,0.125,0.217,0.239,0.268c-0.16,0.26-0.257,0.562-0.257,0.891c0,0.943,0.765,1.707,1.708,1.707S10,16.068,10,15.125c0-0.312-0.09-0.602-0.237-0.855h4.744c-0.146,0.254-0.237,0.543-0.237,0.855c0,0.943,0.766,1.707,1.708,1.707c0.944,0,1.709-0.764,1.709-1.707c0-0.328-0.097-0.631-0.257-0.891C17.55,14.182,17.639,14.074,17.671,13.945 M15.934,6.583h2.502l-0.38,1.709h-2.312L15.934,6.583zM5.505,6.583h2.832l0.189,1.709H5.963L5.505,6.583z M6.65,10.854L6.192,9.146h2.429l0.19,1.708H6.65z M6.879,11.707h2.027l0.189,1.709H7.338L6.879,11.707z M8.292,15.979c-0.472,0-0.854-0.383-0.854-0.854c0-0.473,0.382-0.855,0.854-0.855s0.854,0.383,0.854,0.855C9.146,15.596,8.763,15.979,8.292,15.979 M11.708,13.416H9.955l-0.189-1.709h1.943V13.416z M11.708,10.854H9.67L9.48,9.146h2.228V10.854z M11.708,8.292H9.386l-0.19-1.709h2.512V8.292z M14.315,13.416h-1.753v-1.709h1.942L14.315,13.416zM14.6,10.854h-2.037V9.146h2.227L14.6,10.854z M14.884,8.292h-2.321V6.583h2.512L14.884,8.292z M15.978,15.979c-0.471,0-0.854-0.383-0.854-0.854c0-0.473,0.383-0.855,0.854-0.855c0.473,0,0.854,0.383,0.854,0.855C16.832,15.596,16.45,15.979,15.978,15.979 M16.917,13.416h-1.743l0.189-1.709h1.934L16.917,13.416z M15.458,10.854l0.19-1.708h2.218l-0.38,1.708H15.458z">
+                            </path>
+                        </svg>
+                        Giỏ hàng
+                    </div>
+
+                </div>
+
+
+            </div>
+        </header>
+
+        <!-- Banner/Advertisement -->
+        <section class="banner">
+            <div class="container">
+
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main>
+            <div id="content-main">
+                <section id="special-products">
+                    <h1>Flash seal</h1>
+
+                    <div class="product-list-special">
+                        <div class="timer" id="timer"></div>
+                        <div id="products-list-special">
+
+                        </div>
+                    </div>
+                </section>
+
+                <section id="promotional-banner">
+                    //
+                </section>
+
+                <section id="play-Station" class="container">
+                    <h2>Sản Phẩm Mới Nhất</h2>
+                    <div id="product-list-sony" class="product-list">
+
+                    </div>
+                </section>
+                <section id="xbox" class="container">
+                    <h2>Sản Phẩm Mới Nhất</h2>
+                    <div id="product-list-microsoft" class="product-list">
+
+
+                        <!-- Thêm các sản phẩm khác tương tự -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+
+                <div id="describe">
+                    <p>
+                        Năm 2020, ShopDunk trở thành đại lý ủy quyền của Apple. Chúng tôi phát triển chuỗi cửa hàng tiêu
+                        chuẩn và Apple Mono Store nhằm mang đến trải nghiệm tốt nhất về sản phẩm và dịch vụ của Apple
+                        cho người dùng Việt Nam.
+                    </p>
+                    <div id="phone-box-policy">
+                        <strong>Tổng đài hỗ trợ</strong><br>
+                        <span>1900.xxx6 (08:00 - 22:00)</span><br>
+                        <span>1900.xxx3 (08:00 - 22:00)</span>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
+                <div id="infor-footer">
+                    <p>Thông tin</p>
+                    <ul>
+                        <li><a href="">Phương thức thanh toán </a></li>
+                        <li><a href="">Thuê điểm bán lẻ</a></li>
+                        <li><a href="">Đánh giá chất lượng</a></li>
+                    </ul>
+                </div>
+
+                <div id="policy">
+                    <p>Chính sách</p>
+                    <ul>
+                        <li><a href="">Hủy giao dịch</a></li>
+                        <li><a href="">Giao hàng</a></li>
+                        <li><a href="">Giao hàng (ZaloPay)</a></li>
+                    </ul>
+                </div>
+
+                <div id="Address-contact">
+                    <p>Địa chỉ & Liên hệ</p>
+                    <p>Doanh nghiệp: 09000xxxx</p>
+                    <ul>
+                        <li>Nhánh 1: khu vực Hà Nội và các tỉnh phía bắc</li>
+                        <li>Nhánh 2: khu vực Hồ Chí Minh và các tỉnh phía nam</li>
+                        <li>Nhánh 3: Khiếu nại và góp ý</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </footer>
+
+        <!-- <div id="support-chat">
+            <svg class="svg-icon" viewBox="0 0 20 20">
+                <path d="M17.211,3.39H2.788c-0.22,0-0.4,0.18-0.4,0.4v9.614c0,0.221,0.181,0.402,0.4,0.402h3.206v2.402c0,0.363,0.429,0.533,0.683,0.285l2.72-2.688h7.814c0.221,0,0.401-0.182,0.401-0.402V3.79C17.612,3.569,17.432,3.39,17.211,3.39M16.811,13.004H9.232c-0.106,0-0.206,0.043-0.282,0.117L6.795,15.25v-1.846c0-0.219-0.18-0.4-0.401-0.4H3.189V4.19h13.622V13.004z"></path>
+            </svg>
+        </div> -->
+        <!-- <div id="ChatBox">
+            <div id="title"></div>
+            <div id="main-chat"></div>
+        </div> -->
+    </div>
+
+    <div id="sign-up" style="display: none;">
+        <div class="container-sign-up">
+            <div class="form-container">
+                <h1>Create an account!</h1>
+                <span>Already have an account? <span id="enter-log-in">Log in</span></span>
+                <form id="register-form">
+                    <input id="first-name" type="text" placeholder="First Name" required>
+                    <input id="last-name" type="text" placeholder="Last Name" required>
+                    <input id="accountUser" type="text" placeholder="Username" required>
+                    <input id="password" type="password" placeholder="Password" required>
+                    <input id="re-pass" type="password" placeholder="Re-enter Password" required>
+                    <input id="email" type="email" placeholder="Email" required>
+                    <input id="phone-number" type="text" placeholder="Phone Number" required>
+                    <button id="create-account" type="submit">Tạo Tài Khoản</button>
+
+                    <button id="google">Google</button>
+                    <button id="apple">Apple</button>
+                </form>
+            </div>
+            <div class="display-container">
+                <div id="content-background">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="log-in" style="display: none;">
+        <div class="container-log-in">
+            <div class="form-container">
+                <h1>Log In</h1>
+                <span>Don't have an account? <span id="enter-sign-up">Sign up</span></span>
+                <form id="login-form">
+                    <input id="login-accountUser" type="text" placeholder="Username" required>
+                    <input id="login-password" type="password" placeholder="Password" required>
+                    <button id="login-account" type="submit">Log In</button>
+                    <button id="login-google">Google</button>
+                    <button id="login-apple">Apple</button>
+                </form>
+            </div>
+            <div class="display-container">
+                <div id="content-background"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="my-information">
+        <div id="container-infor">
+            <div id="content-control-information">
+                <div id="avatar-information"></div>
+                <div id="name-information">Huy Nguyen</div>
+                <div id="group-button">
+                    <div class="file-upload-wrapper">
+                        <input type="file" class="file-upload-input" id="image-input" accept="image/*"
+                            onchange="changeAvatar(event)">
+                        <button class="file-upload-button">Chọn tệp</button>
+                    </div>
+                    <div onclick="backhome()" id="back-home" class="group-button">Back home</div>
+                </div>
+            </div>
+            <div id="box-information">
+                <h1>Information</h1>
+                <div class="group-infor">
+                    <div>User name:</div>
+                    <div id="input-user-name">asdfad</div>
+                </div>
+                <div class="group-infor">
+                    <div>Name:</div>
+                    <div id="input-name">312123dv</div>
+                </div>
+                <div class="group-infor">
+                    <div>Email:</div>
+                    <div id="input-email">dsfsf</div>
+                </div>
+                <div class="group-infor">
+                    <div>Phone: </div>
+                    <div id="input-phone-number">123234324</div>
+                </div>
+
+            </div>
+
+            <div id="box-bought">
+                <h1>Đơn hàng đã mua</h1>
+                <div id="container-products">
+                    <div class="product-main-container">
+                        <div class="left-infor">
+                            <img class="img-items" src="" alt="">
+                            <div class="infomation-products-group">
+                                <div class="name-items">dadadadadasdads</div>
+                                <div class="kind-items">ps5</div>
+                                <div class="quantity-items">x2</div>
+                            </div>
+
+                        </div>
+                        <div class="price-items">51000</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="box-bag">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="cart">
+        <div id="container-cart">
+            <div id="product-cart-container">
+                
+
+
+                
+            </div>
+            <div id="cart-pay-container">
+                <h4>Mã giảm gía</h4>
+                <div id="coupons">
+                    <svg id="icons-coupons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 80L0 229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7L48 32C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg><span></span>
+                    <input id="input-coupons" type="text">
+                </div>
+                <h4>Tổng thanh toán</h4>
+                <div id="box-pay-main">
+                    <div class="info-item" id="product-quantity">
+                        <span id="product-quantity-label">Product Quantity</span>
+                        <strong id="product-quantity-value"></strong>
+                    </div>
+                    <div class="info-item" id="total-value">
+                        <span id="total-value-label">Total Value</span>
+                        <strong id="total-value-amount">0</strong>
+                    </div>
+                    <div class="info-item" id="discount-amount">
+                        <span id="discount-amount-label">Discount Amount</span>
+                        <strong id="discount-amount-value">0</strong>
+                    </div>
+                    <div class="info-item" id="shipping-fee">
+                        <span id="shipping-fee-label">Shipping Fee</span>
+                        <strong id="shipping-fee-value">0</strong>
+                    </div>
+                    <div class="info-item" id="final-total">
+                        <span id="final-total-label">Final Total</span>
+                        <strong id="final-total-amount">...</strong>
+                    </div>
+                    
+                </div>
+                <button id="enter-pay">Di den thanhh toan</button>
+                <button class="back-home" id="back-home-cart">
+                    <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                    Back home
+                </button>
+            </div>
+            
+        </div>
+    </div>
+    <div id="bill">
+        <div id="bill-container">
+            <div id="infor-final">
+                <h2>Cập nhạt thông tin lần cuối nhé!!</h2>
+                
+                <hr>
+                <h4 class="text-infor">ten</h4>
+                <input class="input-infor-member" type="text">
+                <h4 class="text-infor">dia chi</h4>
+                <input class="input-infor-member" type="text">
+                <h4 class="text-infor">sdt</h4>
+                <input class="input-infor-member" type="text">
+                <hr>
+                <h3>Product</h3>
+                <div id="check-product">
+                    <div class="check-product-items" >
+                        <img src="" alt="">
+                        <div class="name-id-check-items">
+                            <div class="name-check-items"></div>
+                            <div class="id-check-items"></div>
+                        </div>
+                        <div class="quantity-check-items"></div>
+                    </div>
+                </div>
+                <button>credit card</button>
+                <div id="container-card-credit">
+                    <div id="card-credit">
+                        <div id="name-card">VietNambank</div>
+                        
+                        <img src="https://cdn-icons-png.flaticon.com/128/6404/6404078.png" alt="">
+                        
+                        <div id="card-describe">thẻ thanh toán</div>
+                        <div id="napas-card">napas</div>
+                    </div>
+                    <div id="input-credit-card">
+                        <input placeholder="XXXX XXXX XXXX XXXX" id="bank-account-number" type="text">
+                        <input placeholder="MM/YY" id="expiry-date" type="text">
+                        <input placeholder="CVV" id="cvv" type="text">
+                    </div>
+                </div>
+                <button id="pay-now">Thanh toan</button>
+                <button class="back-home" id="back-home-bill">
+                    <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                    Back home
+                </button>
+            </div>
+    
+            <div id="bill-content">
+                <div id="header-bill">
+                    <div id="text-preview">
+                        Preview
+                    </div>
+                    <div id="choice-method-payment">
+                        <div class="choice-method-payment" id="choice-pdf">
+                            PDF
+                        </div>
+                        <div class="choice-method-payment" id="choice-email">
+                            Email
+                        </div>
+                    </div>
+                </div><hr>
+                <div id="container-bill">
+                    <div id="body-bill">
+                        <div id="id-bill">
+                            ERT-342-556-554
+                        </div><hr>
+                        <div id="infor-person-bill">
+                            <img id="avatar-bill-person" src="" alt="">
+                            <div id="name-bill-person">playstation store</div>
+                            <div id="title-bill-person">xin chao huy nguyen chung toi den tu cua hang playstation day la hoa don mua hang cua ban, hay kiem tra va bao cao voi chung toi neu co sai sot</div>
+                        </div>
+                        <div id="detailed-information-bill">
+                            <div id="date-bill">
+                                <div>Ngay</div>
+                                <strong>22/12/2025</strong>
+                            </div>
+                            <div id="to-person">
+                                <div>Gui den</div>
+                                <strong>huy nguyen</strong><br>
+                                <strong>huynguyen@gmail.com</strong>
+                            </div>
+                        </div><hr>
+                        <div>
+                            <div id="product-body-bill">
+
+                            </div>
+                        </div><hr>
+                        <div id="price-quote">
+                            <div id="left-price">
+                                <li>tong gia tri</li>
+                                <li>giam gia</li>
+                                <li>phi ship</li>
+                                <li>phai tra</li>
+                            </div>
+                            <div id="right-price">
+                                <li>125,000,000</li>
+                                <li>125,000</li>
+                                <li>12,000</li>
+                                <li>....</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <div class="loader" id="loader" style="display: none;"></div>
+    <script src="Shop.js"></script>
+</body>
+
+</html>
