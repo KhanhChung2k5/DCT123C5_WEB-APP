@@ -1,0 +1,142 @@
+body {
+  width: 100vw;
+  height: auto;
+  margin: 0;
+}
+body header {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+body header .container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body header .container #account {
+  color: white;
+}
+body header .container #shop-bag {
+  color: white;
+}
+body header .container .search-bar {
+  width: 30%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+body header .container .search-bar input {
+  width: 100%;
+  height: 30px;
+  font-size: large;
+  border: none;
+  outline: none;
+}
+body header .container nav {
+  width: 30%;
+}
+body header .container nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body header .container nav ul li a {
+  color: white;
+}
+body #banner {
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://i.imgur.com/5tfhKFN.png");
+}
+body main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+body main #all-products {
+  width: 70%;
+  height: 100%;
+}
+body main #all-products #classify {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main #all-products #classify #chose-filter-box {
+  width: 200px;
+  height: 30px;
+  border: 2px solid black;
+}
+body main #all-products #product-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body main #all-products #product-list .product-item {
+  width: 24%;
+  height: 450px;
+  border: 1px solid black;
+  margin: 5px;
+  position: relative;
+}
+body main #all-products #product-list .product-item .box-img {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #all-products #product-list .product-item .box-img img {
+  width: 70%;
+  height: 100%;
+}
+body main #all-products #product-list .product-item .name-product {
+  font-size: large;
+}
+body main #all-products #product-list .product-item .box-price {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body main #all-products #product-list .product-item .add-shopping-cart {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(199, 65, 65);
+  border: none;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  text-align: center;
+}
+body main #all-products #product-list .product-item .original-price {
+  font-size: large;
+  font-weight: 600;
+}
+
+.svg-icon {
+  width: 2em;
+  height: 2em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #000000;
+}
+
+.svg-icon circle {
+  stroke: #000000;
+  stroke-width: 1;
+}/*# sourceMappingURL=AllProduct.css.map */
