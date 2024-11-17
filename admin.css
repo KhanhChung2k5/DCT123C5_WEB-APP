@@ -1,0 +1,339 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "slide-bar header" "slide-bar main" "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px 1fr auto;
+  margin: 0;
+  background-color: #F9FAF9;
+}
+body header {
+  grid-area: header;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(229, 229, 229);
+}
+body #slide-bar {
+  grid-area: slide-bar;
+  background-color: rgb(255, 255, 255);
+  border-right: 1px solid rgb(229, 229, 229);
+}
+body #slide-bar #box-logo {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #slide-bar #box-logo #logo-admin {
+  font-size: xx-large;
+  color: black;
+}
+body #slide-bar #box-menu {
+  width: 100%;
+  height: auto;
+}
+body #slide-bar #box-menu .menu-items {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(229, 229, 229);
+  cursor: pointer;
+}
+body main {
+  grid-area: main;
+  margin: 20px 0px 0px 20px;
+  border-radius: 10px;
+  overflow-x: none;
+}
+body main #content-main {
+  display: grid;
+  grid-template-areas: "revenue" "product";
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 1fr;
+  min-width: 200px;
+}
+body main #content-main #revenue-box {
+  background: none;
+  grid-area: revenue;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 20px;
+}
+body main #content-main #revenue-box .box-items {
+  margin-left: 5px;
+  width: 200px;
+  height: 80px;
+  border: 1px solid rgb(229, 229, 229);
+  display: grid;
+  grid-template-areas: "text text" "price discount";
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px rgb(220, 220, 220);
+}
+body main #content-main #revenue-box .box-items .text-describe {
+  grid-area: text;
+  font-size: large;
+}
+body main #content-main #revenue-box .box-items .number {
+  grid-area: price;
+  font-size: x-large;
+}
+body main #content-main #revenue-box .box-items .percent {
+  grid-area: discount;
+  width: 60px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  color: red;
+  background-color: rgb(255, 218, 218);
+}
+body main #content-main #content-box-product {
+  overflow-y: auto;
+  grid-area: product;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+}
+body main #content-main #content-box-product #fillter-and-search {
+  box-shadow: 1px 1px 10px 1px rgb(206, 206, 206);
+  background: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(207, 207, 207);
+  background-color: white;
+}
+body main #content-main #content-box-product #fillter-and-search #search-bar {
+  width: 30%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 7px;
+  border: 1px solid rgb(229, 229, 229);
+}
+body main #content-main #content-box-product #fillter-and-search #search-bar .icon-search {
+  width: 10%;
+}
+body main #content-main #content-box-product #fillter-and-search #search-bar .main_search {
+  width: 90%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+}
+body main #content-main #content-box-product #fillter-and-search #fillter-main {
+  width: 40%;
+  display: flex;
+  justify-content: start;
+}
+body main #content-main #content-box-product #fillter-and-search #fillter-main .user-check {
+  width: 150px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(200, 200, 200);
+}
+body main #content-main #content-box-product #box-items {
+  border-radius: 20px;
+  margin-top: 10px;
+  border: 1px solid rgb(229, 229, 229);
+  position: relative;
+  min-height: 500px;
+}
+body main #content-main #content-box-product #box-items .box-empty {
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+body main #content-main #content-box-product #box-items .box-empty .img-empty {
+  width: 300px;
+}
+body main #content-main #content-box-product #box-items .box-empty div {
+  color: rgb(192, 192, 192);
+  margin-top: 30px;
+}
+body main #content-main #content-box-product #box-items .items {
+  display: grid;
+  grid-template-columns: 5% 5% 15% 10% 10% 10% 10% 10% 10% 10%;
+  align-items: center;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 1px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+body main #content-main #content-box-product #box-items .items input {
+  width: 100%;
+  box-sizing: border-box;
+}
+body main #content-main #content-box-product #box-items .items .serial, body main #content-main #content-box-product #box-items .items .id-items, body main #content-main #content-box-product #box-items .items .img, body main #content-main #content-box-product #box-items .items .name, body main #content-main #content-box-product #box-items .items .price, body main #content-main #content-box-product #box-items .items .discount, body main #content-main #content-box-product #box-items .items .type, body main #content-main #content-box-product #box-items .items .function {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+body main #content-main #content-box-product #box-items .items .img {
+  width: 50px;
+  height: 50px;
+}
+body main #content-main #content-box-product #box-items .items .img img {
+  width: 50px;
+  height: 50px;
+}
+body main #content-main #content-box-product #box-items .items .function {
+  display: flex;
+  justify-content: space-between;
+}
+body main #content-main #content-box-product #box-items .items .function .edit, body main #content-main #content-box-product #box-items .items .function .delete {
+  width: 75px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+body main #content-main #content-box-product #box-items .items .function .edit {
+  background-color: #FFDFA3;
+}
+body main #content-main #content-box-product #box-items .items .function .delete {
+  background-color: #FFBDB7;
+}
+body main #content-main #content-box-product #box-items .user {
+  display: grid;
+  grid-template-columns: 5% 5% 10% 11% 14% 11% 11% 7% 7% 10%;
+  align-items: center;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 1px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+body main #content-main #content-box-product #box-items .user .function {
+  display: flex;
+  justify-content: space-between;
+}
+body main #content-main #content-box-product #box-items .user .function .edit, body main #content-main #content-box-product #box-items .user .function .delete {
+  width: 75px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+body main #content-main #content-box-product #box-items .user .function .edit {
+  background-color: #FFDFA3;
+}
+body main #content-main #content-box-product #box-items .user .function .delete {
+  background-color: #FFBDB7;
+}
+body footer {
+  grid-area: footer;
+  background-color: rgb(142, 142, 142);
+}
+body #warning {
+  width: 400px;
+  height: 300px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border-radius: 5px;
+}
+body #warning #warning-box {
+  width: 80%;
+  height: 100%;
+  text-align: center;
+}
+body #warning #warning-box svg {
+  margin-top: 20px;
+  width: 30%;
+  height: auto;
+}
+body #warning #warning-box #warning-text {
+  height: 10%;
+  font-size: large;
+}
+body #warning #warning-box #warning-box-yesNo {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body #warning #warning-box #warning-box-yesNo #yes {
+  width: 42%;
+  height: 25%;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgb(209, 77, 77);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+body #warning #warning-box #warning-box-yesNo #no {
+  width: 42%;
+  height: 25%;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border: 1px solid rgb(229, 229, 229);
+}
+body .loader {
+  border: 12px solid #f3f3f3; /* Light grey */
+  border-top: 12px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=admin.css.map */
