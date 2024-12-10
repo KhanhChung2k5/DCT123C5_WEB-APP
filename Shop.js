@@ -26,7 +26,7 @@ class Product {
             <del>${this.price} VND</del>  
             <p>-${this.discount}%</p>
         </div>
-        <button onclick="${this.id}">Thêm vào giỏ hàng</button>  
+        <button onclick="addToCart(${this.id}); showToast('Thêm vào giỏ hàng thành công')">Thêm vào giỏ hàng</button>  
     </article>`;
     }
 
@@ -121,10 +121,11 @@ class ProductManage {
         this.productCart.forEach(product => {
             productQuantity++;
             sum += (parseFloat(product.price.replace(/,/g, ''))) * ((100 - product.discount) / 100);
-            Domquery("#product-quantity-value").innerHTML = productQuantity;
         });
     
-        // Cập nhật giá trị tổng cộng ban đầu (chưa giảm giá)
+        Domquery("#product-quantity-value").innerHTML = productQuantity;
+    
+        // Update total amount
         Domquery("#total-value-amount").innerHTML = sum.toLocaleString('vi-VN');
     }
     DeleteProductCart(id) {
@@ -139,18 +140,18 @@ Domquery("#input-coupons").addEventListener("keypress", (event) => {
     if (event.key === 'Enter') {
         let couponCode = Domquery("#input-coupons").value;
         let sum = 0;
-        let sumAfterDiscount=0
-        // Tính lại tổng giá trị của giỏ hàng
+        let sumAfterDiscount = 0;
+
         productManage.productCart.forEach(product => {
             sum += (parseFloat(product.price.replace(/,/g, ''))) * ((100 - product.discount) / 100);
         });
-        sumAfterDiscount=sum;
-        // Kiểm tra mã giảm giá và áp dụng giảm giá nếu đúng mã
+        sumAfterDiscount = sum;
+
         if (couponCode === "NGUYENQUOCHUY") {
-            sum *= 0.7;  // Giảm 30%
+            sum *= 0.7;  // 30% discount
         }
-        sumAfterDiscount=sumAfterDiscount-sum
-        // Cập nhật giá trị tổng cộng sau khi áp dụng giảm giá
+        sumAfterDiscount = sumAfterDiscount - sum;
+
         Domquery("#total-value-amount").innerHTML = sum.toLocaleString('vi-VN');
         Domquery("#discount-amount-value").innerHTML = sumAfterDiscount.toLocaleString('vi-VN');
     }
@@ -216,6 +217,7 @@ document.addEventListener('click', function (event) {
                 console.log(`Giỏ hàng hiện tại:`, cart);
                 productManage.generateProductCart();
                 productManage.total();
+                showToast("Thêm vào giỏ hàng thành công!");
             }
         }
     } else if (targetElement.closest('[data-id]')) {
@@ -314,12 +316,25 @@ Domquery("#create-account").addEventListener("click", () => {
     Domquery("#phone-number").classList.toggle("error", !isTruePhoneNumber);
 
     // Nếu tất cả các trường hợp lệ, thêm tài khoản vào danh sách
-    if (isTrueFirstName && isTrueLastName && isTrueUserName && isTruePassWord && isTrueRePass && isTrueEmail && isTruePhoneNumber) {
+    if (!isTrueFirstName) {
+        showToast("Vui lòng điền First Name");
+    } else if (!isTrueLastName) {
+        showToast("Vui lòng điền Last Name");
+    } else if (!isTrueUserName) {
+        showToast("Vui lòng điền Username");
+    } else if (!isTruePassWord) {
+        showToast("Vui lòng điền Password (ít nhất 8 ký tự)");
+    } else if (!isTrueRePass) {
+        showToast("Vui lòng điền Re-enter Password (phải trùng với Password)");
+    } else if (!isTrueEmail) {
+        showToast("Vui lòng điền Email (đúng định dạng)");
+    } else if (!isTruePhoneNumber) {
+        showToast("Vui lòng điền Phone Number");
+    } else {
         newAccount = new Account(firstName, lastName, userName, passWord, email, phoneNumber);
         manageAccount.addAccount(newAccount);
         console.log(manageAccount.listAccount);
-    } else {
-        console.log("Thông tin không hợp lệ. Vui lòng kiểm tra lại.");
+        showToast("Tạo tài khoản thành công!");
     }
 })
 
@@ -462,4 +477,85 @@ Domquery("#back-home-bill").addEventListener("click", () => {
     Domquery("#main-shop").style.display = "block"
     Domquery("#bill").style.display = "none"
 })
+
+function processPayment() {
+    const expiryDate = Domquery("#expiry-date").value;
+    const cvv = Domquery("#cvv").value;
+
+    if (!validateCardInfo(expiryDate, cvv)) {
+        return; // Stop processing if validation fails
+    }
+
+    // Payment processing logic
+    showToast("Thanh toán thành công!");
+    setTimeout(() => {
+        window.location.href = "Shop.html"; // Redirect to home page
+    }, 2000);
+}
+
+function calculateTotal() {
+    let total = 0;
+    cartItems.forEach(item => {
+        total += item.price * item.quantity; // Assuming item has a price and quantity
+    });
+    document.getElementById("final-total-amount").innerText = total.toLocaleString('vi-VN') + " VND";
+}
+
+function renderCart() {
+    cartItems.forEach(item => {
+        // Render each item with quantity
+        const itemElement = document.createElement("div");
+        itemElement.innerText = `${item.name} - Số lượng: ${item.quantity}`;
+        document.getElementById("cart-items").appendChild(itemElement);
+    });
+}
+
+document.querySelectorAll("header nav a").forEach(link => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const target = event.target.getAttribute("href");
+        window.location.href = target; // Redirect to the correct page
+    });
+});
+
+function addToCart(product) {
+    // Add product to cart logic
+    showToast("Thêm vào giỏ hàng thành công!");
+    updateCartCount();
+}
+
+function updateCartCount() {
+    const cartCount = document.getElementById("cart-count");
+    cartCount.innerText = cartItems.length; // Assuming cartItems is an array of items in the cart
+}
+
+function validateCardInfo(expiryDate, cvv) {
+    const expiryPattern = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/; // MM/YY format
+    const cvvPattern = /^[0-9]{3}$/; // 3 digits
+
+    if (!expiryPattern.test(expiryDate)) {
+        showToast("Thời gian hết hạn không hợp lệ. Vui lòng nhập theo định dạng MM/YY.");
+        return false;
+    }
+
+    if (!cvvPattern.test(cvv)) {
+        showToast("CVV phải là 3 chữ số.");
+        return false;
+    }
+
+    return true;
+}
+
+function showToast(message) {
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerText = message;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+}
+
+// Event listener for the payment button
+Domquery("#pay-now").addEventListener("click", processPayment);
 
