@@ -1,0 +1,321 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    header{
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(63, 63, 63);
+        a{
+            svg{
+                width:60px;
+                height: 60px;
+                
+            }
+        }
+        nav{
+            width: 70%;
+            ul{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                list-style: none;
+                li{
+                    
+                    a{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        #product-details{
+            width: 100%;
+            height:1000px ;
+            
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            .container{
+                display: flex;
+                justify-content: space-around;
+                align-items: start;
+                width: 70%;
+                
+                .product-image{
+                    width: 45%;
+                    
+                    height: 500px;
+                    
+                    #box-img{
+                        width: 100%;
+                        height: 600px;
+                        background-color: rgb(238, 238, 238);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       #img{
+                        width: 95%;
+                        height: 95%;
+                        background-position: center;
+                        background-size: cover;
+                        background-image: url("https://shopdunk.com/images/thumbs/0028431_sony-ps5-slim-may-choi-game-sony-playstation-5-slim-chinh-hang-sony-viet-nam_550.jpeg");
+                       }
+                    }
+                    #image-carousel{
+                        margin-top:10px ;
+                        width: 100%;
+                        height: 100px;
+                        
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        .listImg{
+                            width: 20%;
+                            height: 100%;
+                            background-position: center;
+                            background-size: cover;
+                            border-radius: 5px;
+                            border: 1px solid black;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+                .product-info{
+                    width: 45%;
+                    h1{
+                        font-size: xx-large;
+                    }
+                    del{
+                        font-size: large;
+                        color: rgb(87, 87, 87);
+                    }
+                    #price{
+                        color: rgb(0, 42, 255);
+                        font-size: xx-large;
+                        font-weight: 600;
+                       
+                        
+                    }
+                    .description{
+                        font-size: small;
+                        color: rgb(112, 112, 112);
+                    }
+                    #box-promotion{
+                        margin-top: 10px;
+                        max-width: 100%;
+                        height: 300px;
+                        border: 1px solid rgb(100, 100, 100);
+                        border-radius: 5px;
+                        padding: 10px;
+                        #icon-promotion{
+                            display: flex;
+                            align-items: center;
+                            
+                            svg{
+                                margin: 10px;
+                                width: 30px;
+                                height: 30px;
+                            }
+                            
+                        }
+                        #gift-code{
+                            width: 100%;
+                            height: 50px;
+                            display: flex;
+                            justify-content: space-around;
+                            #input-giftCode{
+                                width:65% ;
+                                height:auto ;
+                                border-radius: 7px;
+                                border: none;
+                                box-shadow: 1px 1px 10px 1px rgb(154, 154, 154);
+                            }
+                            #submit-giftCode{
+                                width: 25%;
+                                color: white;
+                                height: auto;
+                                background-color: rgb(73, 146, 73);
+                                border-radius: 7px;
+                            }
+                        }
+                        
+
+                    }
+                    #buy{
+                        width: 100%;
+                        height: 50px;
+                        background-color: rgb(0, 102, 204);
+                        border: none;
+                        cursor: pointer;
+                        margin-top: 10px;
+                        border-radius: 5px;
+                        color: white;
+                        font-weight: 600;
+                        font-size: large;
+                    }
+                    #product-inclusions{
+                        margin-top: 10px;
+                        width: 100%;
+                        border: 1px solid rgb(189, 189, 189);
+                        border-radius: 7px;
+                        h3{
+                            font-size: 20px;
+                            text-align: center;
+                            border-bottom: 1px solid black;
+                        }
+                    }
+                }
+            }
+        }
+        #rate{
+            width: 100%;
+            height: auto;
+            
+            
+            .rating-container {
+                display: flex;
+                align-items: flex-start;
+                font-family: Arial, sans-serif;
+                max-width: 700px;
+                margin: 20px auto;
+              
+                .overall-score {
+                  text-align: center;
+                  margin-right: 20px;
+              
+                  h1 {
+                    font-size: 3rem;
+                    margin: 0;
+                  }
+              
+                  .stars {
+                    font-size: 1.5rem;
+                    color: gold;
+                  }
+              
+                  p {
+                    font-size: 1rem;
+                    color: gray;
+                  }
+                }
+              
+                .categories {
+                  flex: 1;
+              
+                  .category {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+              
+                    span {
+                      &.category-score {
+                        flex: 0 0 20px;
+                        text-align: right;
+                        font-size: 0.9rem;
+                      }
+              
+                      &:first-child {
+                        flex: 0 0 100px;
+                        font-size: 0.9rem;
+                        color: #333;
+                      }
+                    }
+              
+                    .bar-container {
+                      flex: 1;
+                      height: 10px;
+                      background: #eee;
+                      border-radius: 5px;
+                      margin: 0 10px;
+                      position: relative;
+                      overflow: hidden;
+              
+                      .bar {
+                        height: 100%;
+                        background: gold;
+                        border-radius: 5px;
+                      }
+                    }
+                  }
+                }
+              }
+              
+        }
+        #coment-news{
+            width: 100%;
+            height: 500px;
+            
+            display: flex;
+            
+            align-items: center;
+            justify-content:center;
+            gap: 30px;
+            padding: 30px 0px;
+            #container-coment{
+                
+                width: 55%;
+                height: 300px;
+                .person-coment{
+                    width: 100%;
+                    height: 150px;
+                    border-bottom: 1px solid black;
+                    padding: 10px 0;
+                    .person-infor{
+                        width: 100%;
+                        height: 50px;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 20px;
+                        #time-bought{
+                            font-size: small;
+                            color: rgb(179, 179, 179);
+                        }
+                        .avatar-person{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-image: url();
+                            border: 1px solid black;
+                        }
+                        .name-person{
+                            font-size: x-large;
+                            font-weight: 800;
+                        }
+                    }
+                    .star-person{
+                        span{
+                            color: gold;
+                        }
+                    }
+                }
+            }
+            #container-news{
+                height: auto;
+                width: 20%;
+                
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 1px 1px 15px 2px rgb(234, 234, 234);
+                .news-post{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    .img-news{
+                        width: 45%;
+                    }   
+                    .content-news{
+                        width: 45%;
+                    }
+                }
+            }
+        }
+    }
+}
